@@ -19,4 +19,4 @@ jobs:
       - name: Check installed binaries
         run : ls -al /opt/firefox
       - name: run cypress
-        run: cypress run --browser="/opt/firefox/firefox"
+        run: cypress run --browser="/opt/firefox/firefox-bin"
