@@ -20,6 +20,6 @@ jobs:
       - name: Check installed binaries
         run : ls -al /opt/firefox
       - name: Symlink firefox
-        run : ln -fs /opt/firefox/firefox /usr/bin/firefox
+        run : mv -f /opt/firefox/firefox /usr/bin/firefox
       - name: run cypress
         run: cypress run --browser firefox
