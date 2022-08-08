@@ -13,13 +13,11 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: Yarn Install
-        run: yarn
-      - name: Check installed binaries
-        run : ls -al /usr/bin
-      - name: Check installed binaries
-        run : ls -al /opt/firefox
       - name: Symlink firefox
         run : mv -f /opt/firefox/firefox /usr/bin/firefox
+      - name: echo path
+        run: echo $PATH
+      - name: install
+        run: yarn
       - name: run cypress
         run: DEBUG=cypress:server:browsers:firefox cypress run --browser firefox
