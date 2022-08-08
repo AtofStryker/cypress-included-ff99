@@ -9,6 +9,7 @@ jobs:
     timeout-minutes: 35
     container:
       image: cypress/included:10.4.0
+      options: --user root
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
@@ -19,6 +20,6 @@ jobs:
       - name: Check installed binaries
         run : ls -al /opt/firefox
       - name: Symlink firefox
-        run : ln `which firefox` /opt/firefox/firefox
+        run : ln -fs /opt/firefox/firefox /usr/bin/firefox
       - name: run cypress
         run: cypress run --browser firefox
