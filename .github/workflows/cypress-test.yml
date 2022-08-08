@@ -21,6 +21,8 @@ jobs:
         run: export PATH="/opt/firefox:$PATH"
       - name: echo path
         run: echo $PATH
+      - name: list permissions
+        run:  ls -al /usr/bin
       - name: install
         run: yarn
       - name: run cypress
