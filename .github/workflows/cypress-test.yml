@@ -22,4 +22,4 @@ jobs:
       - name: Symlink firefox
         run : mv -f /opt/firefox/firefox /usr/bin/firefox
       - name: run cypress
-        run: cypress run --browser firefox
+        run: DEBUG=cypress:server:browsers:firefox cypress run --browser firefox
