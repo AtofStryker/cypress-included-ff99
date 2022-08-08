@@ -18,5 +18,7 @@ jobs:
         run : ls -al /usr/bin
       - name: Check installed binaries
         run : ls -al /opt/firefox
+      - name: Symlink firefox
+        run : ln `which firefox` /opt/firefox/firefox
       - name: run cypress
-        run: cypress run --browser="/opt/firefox/firefox-bin"
+        run: cypress run --browser firefox
