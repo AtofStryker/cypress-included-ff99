@@ -23,6 +23,8 @@ jobs:
         run: echo $PATH
       - name: list permissions
         run:  ls -al /usr/bin
+      - name: give it all the permissions
+        run:  chmod 777 /usr/bin/firefox
       - name: install
         run: yarn
       - name: run cypress
